@@ -133,7 +133,9 @@ body {
   font-size: 1.6rem;
   line-height: 180%;
   color: $color_base;
-  background: #EC2C2C;
+  background: url(../img/bg-main.png)no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   //overflow-wrap: break-word;
   word-break: normal;
   line-break: strict;

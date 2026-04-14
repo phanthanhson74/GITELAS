@@ -37,40 +37,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const swiper = new Swiper(".swiper", {
   loop: true,
-  paginationClickable: true,
   spaceBetween: 20,
   slidesPerView: 1,
   autoHeight: true,
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  pagination: {
-    el: ".swiper-pagination",
-  },
-  autoplay: {
-    delay: 4000,
-    disableOnInteraction: true,
-  },
-  breakpoints: {
-    768: {
-      slidesPerView: "auto",
-    },
-  },
-});
-
-const swiper02 = new Swiper(".swiper02", {
-  loop: true,
-  paginationClickable: true,
-  spaceBetween: 20,
-  slidesPerView: 1,
-  autoHeight: true,
-  navigation: {
-    nextEl: ".swiper-button-next02",
-    prevEl: ".swiper-button-prev02",
-  },
-  pagination: {
-    el: ".swiper-pagination02",
+    nextEl: '.p-interview .nav-next',
+    prevEl: '.p-interview .nav-prev',
   },
   autoplay: {
     delay: 4000,
