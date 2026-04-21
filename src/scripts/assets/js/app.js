@@ -21,16 +21,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const footer = document.querySelector("footer");
 
   window.addEventListener("scroll", () => {
-      if (!floatBtns || !footer) return;
+    if (!floatBtns || !footer) return;
 
-      const footerRect = footer.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
+    const footerRect = footer.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
 
-      if (footerRect.top < windowHeight) {
-          floatBtns.classList.add("hidden");
-      } else {
-          floatBtns.classList.remove("hidden");
-      }
+    if (footerRect.top < windowHeight) {
+      floatBtns.classList.add("hidden");
+    } else {
+      floatBtns.classList.remove("hidden");
+    }
   });
 });
 
@@ -262,6 +262,34 @@ const initHeader = () => {
       });
     });
   }
+}
+
+
+const smoothScrollFromQuery = {
+  location: location.pathname,
+
+  init: function () {
+    // Skip if in admin panel
+    if (this.location.includes("/admin/")) return;
+
+    const params = new URLSearchParams(location.search);
+    const anchor = params.get("anc") || params.keys().next().value;
+    const selector = anchor ? `#${anchor}` : null;
+    const target = selector ? document.querySelector(selector) : null;
+
+    if (target) {
+      setTimeout(() => {
+        scrollToTarget(target);
+      }, 700); // Matches jQuery animate delay
+    }
+  }
+};
+
+// Run query-based scroll on page load if URL has query string
+if (location.search) {
+  setTimeout(() => {
+    smoothScrollFromQuery.init();
+  }, 100);
 }
 
 
