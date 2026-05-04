@@ -40,13 +40,10 @@ const swiper = new Swiper(".swiper", {
   spaceBetween: 20,
   slidesPerView: 1,
   autoHeight: true,
+  speed: 1200,
   navigation: {
     nextEl: '.p-interview .nav-next',
     prevEl: '.p-interview .nav-prev',
-  },
-  autoplay: {
-    delay: 4000,
-    disableOnInteraction: true,
   },
   breakpoints: {
     768: {
